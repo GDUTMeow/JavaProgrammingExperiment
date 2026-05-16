@@ -8,3 +8,6 @@
 
 # Mac Shit
 .DS_Store
+
+# Zip files
+*.zip
