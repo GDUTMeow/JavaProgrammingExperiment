@@ -1,0 +1,10 @@
+# Docs
+*.doc*
+*.ppt*
+*.pdf
+
+# Java class files
+*.class
+
+# Mac Shit
+.DS_Store
