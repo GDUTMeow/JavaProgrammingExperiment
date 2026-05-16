@@ -2,7 +2,7 @@
 
 ## 题目一
 
-> [!tips]
+> [!tip]
 > 
 > 代码在 [Matrix.java](./Matrix.java)
 
@@ -16,7 +16,7 @@
 
 ## 题目二
 
-> [!tips]
+> [!tip]
 > 
 > 代码在 [GuessNumber.java](./GuessNumber.java)
 
@@ -42,7 +42,7 @@
 
 ## 题目三
 
-> [!tips]
+> [!tip]
 > 
 > 代码在 [MonteCarlo.java](./MonteCarlo.java)
 
@@ -59,7 +59,7 @@
 >
 > 要求：大模型辅助解题
 
-> [!tips]
+> [!tip]
 > 
 > 代码在 [AverageWaitingTime.java](./AverageWaitingTime.java)
 
