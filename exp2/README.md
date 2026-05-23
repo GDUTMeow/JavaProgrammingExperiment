@@ -1,0 +1,84 @@
+# 实验二
+
+## 题目一：工资支付系统
+
+> [!tip]
+>
+> 代码在 [SalaryPayment.java](./SalaryPayment.java)
+
+某公司编写一个工资支付系统，用于计算某一类员工的月薪
+
+该公司共有四类员工
+
+- 领固定月薪（SalariedEmployee）
+- 计时取酬（HourlyEmployee，如果一月工时超过160小时，则还需对额外的工时支付加班费）
+- 按销售额提成（CommissionEmployee）
+- 带底薪并按销售额提成（BasePlusCommissionEmployee）
+
+[](./img/SalaryClassExtends.png)
+
+其继承层次结构如下所示
+
+已知每类员工均有表示员工工号、姓名和出生年月的属性，和用于计算员工月薪的方法
+
+创建一个 Employee 变量数组，保存 Employee 类层次结构中每个具体类对象的引用，对每个 Employee 显示其工号、姓名、出生年月和月收入
+
+如果当月是 Employee 的生日所在的月份，则还另发给他 100 元作为红包
+
+## 题目二：歌手比赛的分数评定系统
+
+> 吐槽：不是这说的也太乱了 =-=
+
+> [!tip]
+>
+> 代码在 [SingerJudgingLine.java](./SingerJudgingLine.java)
+
+如果对象 a 含有对象 b 的引用，对象 b 含有对象 c 的引用，那么就可以使用 a、b、c 搭建流水线
+
+即建立一个类，该类同时组合 a、b、c 三个对象
+
+流水线的作用是：用户只需将要处理的数据交给流水线，流水线会依次让流水线上的对象来处理数据，即流水线上首先由对象a处理数据
+
+a 处理数据后，自动将处理的数据交给 b，b 处理数据后，自动将处理的数据交给 c
+
+例如，在歌手比赛时，只需将评委给出的分数交给设计好的流水线，就可以得到选手的最后得分
+
+流水线上的第一个对象负责录入裁判给选手的分数，第二个对象负责去掉一个最高分和一个最低分，最后一个对象负责计算出平均成绩
+
+请根据下面各类的说明，用流水线完成分数评定系统
+
+- InputScore 类的对象负责录入分数，InputScore 类组合了 DelScore 类的对象
+- DelScore 类的对象负责去掉一个最高分和一个最低分，DelScore 类组合了 ComputerAver 类的对象
+- ComputerAver 类的对象负责计算平均值
+
+Line 类组合了 InputScore、 DelScore 和 ComputerAver 3 个类的实例
+
+### 提示
+
+#### 对象的组合
+
+一个类的成员变量可以是 Java 允许的任何数据类型，因此一个类可以把某个对象作为自己的一个成员变量
+
+该类的对象将其他对象作为自己的组成部分，这就是人们常说的 Has-A
+
+如果一个对象 a 组合了对象 b，那么对象 a 就可以委托对象 b 调用其方法，即对象 a 以组合的方式复用对象 b 的方法
+
+例如
+
+```java
+class circle{
+    double getArea() {…….}
+}
+class circular {
+    circle bottom;  // 圆锥组合圆
+    double height;
+
+    double getVolume() {
+        return bottom.getArea()*height/3.0
+    }
+}
+```
+
+请自行设计合理的数据
+
+注意分析程序中有可能产生的异常，根据需要进行异常捕获和处理
